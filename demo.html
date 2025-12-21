@@ -1,27 +1,68 @@
-<html> 
-    <htad>
-        <title>use of the table tag</title>
-    </htad>
-    <table border ="2"
-    <tr>
-        <td>sr. name</td>
-        <td>name</td>
-        <td>salary</td>
-    </tr>
-    <td>1</td>
-    <td>ramesh</td>
-    <td>20,000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>gaming</td>
-<td>30,000</td>
-</tr>
-<tr>
-    <td>3</td>
-    <td>jyoti</td>
-    <td>25000</td>
-    </tr>
-</table>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Information Form</title>
+</head>
+
+<body>
+
+<h2>Student Information Form</h2>
+
+<form onsubmit="return validateForm()">
+
+Name:<br>
+<input type="text" id="name"><br><br>
+
+Roll No:<br>
+<input type="text" id="roll"><br><br>
+
+Email:<br>
+<input type="text" id="email"><br><br>
+
+Mobile:<br>
+<input type="text" id="mobile"><br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<script>
+function validateForm(){
+
+    let name = document.getElementById("name").value;
+    let roll = document.getElementById("roll").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+
+    if(name == ""){
+        alert("Please enter name");
+        return false;
+    }
+
+    if(roll == ""){
+        alert("Please enter roll number");
+        return false;
+    }
+
+    if(email == ""){
+        alert("Please enter email");
+        return false;
+    }
+
+    if(mobile == ""){
+        alert("Please enter mobile number");
+        return false;
+    }
+
+    if(mobile.length != 10 || isNaN(mobile)){
+        alert("Enter valid 10 digit mobile number");
+        return false;
+    }
+
+    alert("Student information submitted successfully!");
+    return true;
+}
+</script>
+
 </body>
 </html>
