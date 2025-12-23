@@ -1,2 +1,0 @@
-# agro-rent
-for pratice  
